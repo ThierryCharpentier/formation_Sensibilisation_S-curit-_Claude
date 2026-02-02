@@ -1,0 +1,1196 @@
+bash
+
+cat /mnt/user-data/outputs/index.html
+Sortie
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation : Sensibilisation Sécurité - CETIH pour SPPF</title>
+    <meta name="description" content="Formation Sensibilisation Sécurité Simplifiée pour les collaborateurs de SPPF - Centre de Formation CETIH">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bleu-principal: #00153B;
+            --brun-accent: #BCA59B;
+            --blanc: #FFFFFF;
+            --gris-clair: #F5F5F5;
+            --gris-moyen: #E0E0E0;
+            --orange-securite: #FF6B35;
+            --vert-valide: #059669;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--bleu-principal);
+            line-height: 1.7;
+            background-color: var(--blanc);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bleu-principal) 0%, #003366 100%);
+            color: var(--blanc);
+            padding: 4rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255,255,255,.01) 35px, rgba(255,255,255,.01) 70px);
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .logo {
+            height: 70px;
+            width: auto;
+            background: var(--blanc);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .formation-badge {
+            background: var(--orange-securite);
+            color: var(--blanc);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            animation: fadeInDown 0.8s ease-out 0.2s both;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 800px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out calc(0.5s + var(--delay)) both;
+        }
+
+        .info-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--bleu-principal);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--orange-securite);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 3rem;
+            max-width: 700px;
+        }
+
+        /* Objectifs */
+        .objectifs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .objectif-card {
+            background: var(--blanc);
+            border: 2px solid var(--gris-moyen);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .objectif-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--orange-securite);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .objectif-card:hover {
+            border-color: var(--orange-securite);
+            transform: translateX(10px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .objectif-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .objectif-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .objectif-text {
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* Programme Accordéon */
+        .programme-section {
+            background: var(--gris-clair);
+        }
+
+        .accordion {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: var(--blanc);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .accordion-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s ease;
+            background: var(--blanc);
+        }
+
+        .accordion-header:hover {
+            background: var(--gris-clair);
+        }
+
+        .accordion-header.active {
+            background: var(--bleu-principal);
+            color: var(--blanc);
+        }
+
+        .accordion-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex: 1;
+        }
+
+        .sequence-number {
+            background: var(--orange-securite);
+            color: var(--blanc);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .accordion-header.active .sequence-number {
+            background: var(--blanc);
+            color: var(--bleu-principal);
+        }
+
+        .sequence-info {
+            flex: 1;
+        }
+
+        .sequence-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .sequence-meta {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .accordion-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 500px;
+        }
+
+        .accordion-body {
+            padding: 1.5rem 2rem 2rem;
+            border-top: 1px solid var(--gris-moyen);
+        }
+
+        .sequence-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .sequence-method {
+            background: var(--gris-clair);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        .method-label {
+            font-weight: 600;
+            color: var(--bleu-principal);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Pause spéciale */
+        .pause-item {
+            background: linear-gradient(135deg, var(--brun-accent) 0%, #d4c4bb 100%);
+            text-align: center;
+        }
+
+        .pause-item .accordion-header {
+            background: transparent;
+            color: var(--blanc);
+            justify-content: center;
+        }
+
+        .pause-item .sequence-number {
+            background: var(--blanc);
+            color: var(--brun-accent);
+        }
+
+        /* Carte interactive */
+        .map-section {
+            background: var(--blanc);
+        }
+
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            height: 450px;
+            margin-top: 2rem;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .lieu-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .lieu-card {
+            background: var(--gris-clair);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--orange-securite);
+        }
+
+        .lieu-card-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--bleu-principal);
+        }
+
+        .lieu-card-content {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Téléchargements */
+        .download-section {
+            background: var(--gris-clair);
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .download-card {
+            background: var(--blanc);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .download-card:hover {
+            border-color: var(--orange-securite);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        }
+
+        .download-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .download-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--bleu-principal);
+        }
+
+        .download-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: var(--orange-securite);
+            color: var(--blanc);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-download:hover {
+            background: #e55a2a;
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(255,107,53,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bleu-principal);
+            color: var(--blanc);
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--brun-accent);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            opacity: 0.9;
+            color: var(--blanc);
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1.5rem 4rem;
+            }
+
+            .logo-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero-info {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .accordion-header {
+                padding: 1rem 1.5rem;
+            }
+
+            .accordion-body {
+                padding: 1rem 1.5rem 1.5rem;
+            }
+
+            .sequence-meta {
+                font-size: 0.8rem;
+            }
+
+            .map-container {
+                height: 350px;
+            }
+        }
+
+        /* Accessibilité */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Focus visible pour accessibilité clavier */
+        *:focus-visible {
+            outline: 3px solid var(--orange-securite);
+            outline-offset: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Logo Centre de Formation CETIH" class="logo">
+                <span class="formation-badge">🛡️ Formation Sécurité</span>
+            </div>
+            
+            <h1>Sensibilisation Sécurité Simplifiée</h1>
+            <p class="hero-subtitle">
+                Identifier les situations de contournement, comprendre le sens des règles de sécurité 
+                et appliquer des procédures sûres en production.
+            </p>
+            
+            <div class="hero-info">
+                <div class="info-card" style="--delay: 0s;">
+                    <span class="info-icon">⏱️</span>
+                    <div class="info-label">Durée</div>
+                    <div class="info-value">4 heures (½ journée)</div>
+                </div>
+                <div class="info-card" style="--delay: 0.1s;">
+                    <span class="info-icon">📅</span>
+                    <div class="info-label">Dates</div>
+                    <div class="info-value">2 & 6 février 2026</div>
+                </div>
+                <div class="info-card" style="--delay: 0.2s;">
+                    <span class="info-icon">📍</span>
+                    <div class="info-label">Lieu</div>
+                    <div class="info-value">SPPF - Cholet (49)</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Objectifs Pédagogiques -->
+    <section id="objectifs">
+        <div class="container">
+            <h2 class="section-title">Objectifs pédagogiques</h2>
+            <p class="section-subtitle">À la fin de cette formation, vous serez capable de :</p>
+            
+            <div class="objectifs-grid">
+                <div class="objectif-card">
+                    <span class="objectif-icon">🔍</span>
+                    <p class="objectif-text">
+                        <strong>Identifier</strong> les situations de travail où une procédure est contournée
+                    </p>
+                </div>
+                <div class="objectif-card">
+                    <span class="objectif-icon">⚠️</span>
+                    <p class="objectif-text">
+                        <strong>Reconnaître</strong> le risque réel associé aux contournements
+                    </p>
+                </div>
+                <div class="objectif-card">
+                    <span class="objectif-icon">💡</span>
+                    <p class="objectif-text">
+                        <strong>Comprendre</strong> la finalité des étapes clés d'une procédure
+                    </p>
+                </div>
+                <div class="objectif-card">
+                    <span class="objectif-icon">⚖️</span>
+                    <p class="objectif-text">
+                        <strong>Différencier</strong> les étapes non négociables des étapes adaptables
+                    </p>
+                </div>
+                <div class="objectif-card">
+                    <span class="objectif-icon">🔬</span>
+                    <p class="objectif-text">
+                        <strong>Analyser</strong> les causes d'un contournement (temps, confort, pression)
+                    </p>
+                </div>
+                <div class="objectif-card">
+                    <span class="objectif-icon">✅</span>
+                    <p class="objectif-text">
+                        <strong>Choisir</strong> un comportement sûr face à une contrainte de production
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme détaillé -->
+    <section id="programme" class="programme-section">
+        <div class="container">
+            <h2 class="section-title">Programme détaillé</h2>
+            <p class="section-subtitle">11 séquences pédagogiques interactives sur 4 heures</p>
+            
+            <div class="accordion">
+                <!-- Séquence 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-left">
+                            <div class="sequence-number">1</div>
+                            <div class="sequence-info">
+                                <div class="sequence-title">Introduction & cadrage</div>
+                                <div class="sequence-meta">20 min • 08:30 - 08:50</div>
+                            </div>
+                        </div>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="sequence-description">
+                                Installation d'un cadre sécurisant, recueil des attentes et création d'une dynamique de groupe positive.
+                            </p>
+                            <div class="sequence-method">
+                                <div class="method-label">Méthode pédagogique :</div>
+                                Icebreaker « 1 risque vécu / 1 protection utile » (oral + pictos), recueil d'attentes sur post-it
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Séquence 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-left">
+                            <div class="sequence-number">2</div>
+                            <div class="sequence-info">
+                                <div class="sequence-title">Voir le contournement</div>
+                                <div class="sequence-meta">20 min • 08:50 - 09:10</div>
+                            </div>
+                        </div>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="sequence-description">
+                                Identification des situations de contournement réelles dans votre environnement de travail.
+                            </p>
+                            <div class="sequence-method">
+                                <div class="method-label">Méthode pédagogique :</div>
+                                Photo-langage métier (situations réelles anonymisées) avec photos contrastées et description orale
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Séquence 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-left">
+                            <div class="sequence-number">3</div>
+                            <div class="sequence-info">
+                                <div class="sequence-title">Pourquoi la règle existe</div>
+                                <div class="sequence-meta">20 min • 09:10 - 09:30</div>
+                            </div>
+                        </div>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="sequence-description">
+                                Compréhension de la finalité des règles de sécurité et de leur importance.
+                            </p>
+                            <div class="sequence-method">
+                                <div class="method-label">Méthode pédagogique :</div>
+                                Démonstration guidée « si j'enlève / si je garde » (sans danger) avec verbalisation lente
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Séquence 4 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-left">
+                            <div class="sequence-number">4</div>
+                            <div class="sequence-info">
+                                <div class="sequence-title">Non négociable / adaptable</div>
+                                <div class="sequence-meta">20 min • 09:30 - 09:50</div>
+                            </div>
+                        </div>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="sequence-description">
+                                Différenciation entre les étapes critiques non négociables et celles qui peuvent être adaptées.
+                            </p>
+                            <div class="sequence-method">
+                                <div class="method-label">Méthode pédagogique :</div>
+                                Jeu de cartes procédures (classer en groupe) avec cartes grands caractères et manipulation accessible
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAUSE -->
+                <div class="accordion-item pause-item">
+                    <div class="accordion-header">
+                        <div class="accordion-left">
+                            <div class="sequence-number">☕</div>
+                            <div class="sequence-info">
+                                <div class="sequence-title">Pause</div>
+                                <div class="sequence-meta">20 min • 09:50 - 10:10</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Séquence 5 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-left">
+                            <div class="sequence-number">5</div>
+                            <div class="sequence-info">
+                                <div class="sequence-title">Appliquer sans contourner</div>
+                                <div class="sequence-meta">20 min • 10:10 - 10:30</div>
+                            </div>
+                        </div>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="sequence-description">
+                                Application pratique d'une procédure critique en situation réelle ou simulée de manière sécurisée.
+                            </p>
+                            <div class="sequence-method">
+                                <div class="method-label">Méthode pédagogique :</div>
+                                Mise en situation simulée / jeu de rôle sécurisé (sans effort physique contraint)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Séquence 6 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-left">
+                            <div class="sequence-number">6</div>
+                            <div class="sequence-info">
+                                <div class="sequence-title">Pourquoi on contourne</div>
+                                <div class="sequence-meta">20 min • 10:30 - 10:50</div>
+                            </div>
+                        </div>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="sequence-description">
+                                Analyse des causes profondes des contournements : temps, confort, pression, habitudes.
+                            </p>
+                            <div class="sequence-method">
+                                <div class="method-label">Méthode pédagogique :</div>
+                                Atelier causes racines simplifié avec schéma visuel et discussion collective
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Séquence 7 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-left">
+                            <div class="sequence-number">7</div>
+                            <div class="sequence-info">
+                                <div class="sequence-title">Et si ça dérape ?</div>
+                                <div class="sequence-meta">20 min • 10:50 - 11:10</div>
+                            </div>
+                        </div>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="sequence-description">
+                                Évaluation des conséquences potentielles d'un contournement à travers des cas réels anonymisés.
+                            </p>
+                            <div class="sequence-method">
+                                <div class="method-label">Méthode pédagogique :</div>
+                                Cas réel anonymisé → conséquences en chaîne (lecture orale, schéma progressif)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Séquence 8 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-left">
+                            <div class="sequence-number">8</div>
+                            <div class="sequence-info">
+                                <div class="sequence-title">Arbitrer Sécurité / Production</div>
+                                <div class="sequence-meta">20 min • 11:10 - 11:30</div>
+                            </div>
+                        </div>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="sequence-description">
+                                Apprentissage du choix d'un comportement sûr face aux contraintes de production.
+                            </p>
+                            <div class="sequence-method">
+                                <div class="method-label">Méthode pédagogique :</div>
+                                Scénarios courts à choix multiples discutés (vote à main levée / pictos)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Séquence 9 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-left">
+                            <div class="sequence-number">9</div>
+                            <div class="sequence-info">
+                                <div class="sequence-title">Engagement collectif</div>
+                                <div class="sequence-meta">20 min • 11:30 - 11:50</div>
+                            </div>
+                        </div>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="sequence-description">
+                                Renforcement de la norme collective positive autour de la sécurité au travail.
+                            </p>
+                            <div class="sequence-method">
+                                <div class="method-label">Méthode pédagogique :</div>
+                                Débat mouvant doux « acceptable / non acceptable » (déplacements facultatifs)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Séquence 10 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-left">
+                            <div class="sequence-number">10</div>
+                            <div class="sequence-info">
+                                <div class="sequence-title">Conclusion & ancrage</div>
+                                <div class="sequence-meta">20 min • 11:50 - 12:10</div>
+                            </div>
+                        </div>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="sequence-description">
+                                Évaluation, ancrage des apprentissages et projection vers la mise en pratique.
+                            </p>
+                            <div class="sequence-method">
+                                <div class="method-label">Méthode pédagogique :</div>
+                                Évaluation à chaud + identification d'1 apprentissage clé + 1 petit pas personnel
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Séquence 11 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <div class="accordion-left">
+                            <div class="sequence-number">11</div>
+                            <div class="sequence-info">
+                                <div class="sequence-title">Buffer & régulation</div>
+                                <div class="sequence-meta">20 min • 12:10 - 12:30</div>
+                            </div>
+                        </div>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <p class="sequence-description">
+                                Temps d'ajustement selon les besoins du groupe avec reprise ciblée ou approfondissement.
+                            </p>
+                            <div class="sequence-method">
+                                <div class="method-label">Méthode pédagogique :</div>
+                                Adaptation en temps réel selon les besoins identifiés durant la formation
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Localisation -->
+    <section id="localisation" class="map-section">
+        <div class="container">
+            <h2 class="section-title">Lieu de formation</h2>
+            <p class="section-subtitle">Formation intra-entreprise chez SPPF à Cholet</p>
+            
+            <div class="lieu-info">
+                <div class="lieu-card">
+                    <div class="lieu-card-title">📍 Adresse</div>
+                    <div class="lieu-card-content">
+                        SPPF<br>
+                        15 rue de Tours<br>
+                        49300 Cholet
+                    </div>
+                </div>
+                <div class="lieu-card">
+                    <div class="lieu-card-title">📅 Sessions</div>
+                    <div class="lieu-card-content">
+                        <strong>Lundi 2 février 2026</strong><br>
+                        08h30 - 12h30<br><br>
+                        <strong>Vendredi 6 février 2026</strong><br>
+                        08h30 - 12h30
+                    </div>
+                </div>
+                <div class="lieu-card">
+                    <div class="lieu-card-title">👨‍🏫 Formateur</div>
+                    <div class="lieu-card-content">
+                        <strong>Thierry CHARPENTIER</strong><br>
+                        Expert en prévention des risques industriels<br>
+                        📞 06 73 36 94 25<br>
+                        ✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b6c298d5ded7c4c6d3d8c2dfd3c4f6c5c6c6d098d0c4">[email&#160;protected]</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2707.8!2d-0.87!3d47.06!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDAzJzM2LjAiTiAwwrA1MicxMi4wIlc!5e0!3m2!1sfr!2sfr!4v1234567890"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Localisation SPPF - 15 rue de Tours, Cholet">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Téléchargements -->
+    <section id="telechargements" class="download-section">
+        <div class="container">
+            <h2 class="section-title">Documents à télécharger</h2>
+            <p class="section-subtitle">Tous les documents nécessaires pour votre formation</p>
+            
+            <div class="download-grid">
+                <div class="download-card">
+                    <span class="download-icon">📄</span>
+                    <h3 class="download-title">Programme détaillé</h3>
+                    <p class="download-description">
+                        Fiche programme complète avec objectifs, contenu pédagogique et modalités d'évaluation
+                    </p>
+                    <a href="programme.pdf" class="btn-download" download>
+                        Télécharger le programme
+                    </a>
+                </div>
+                
+                <div class="download-card">
+                    <span class="download-icon">📘</span>
+                    <h3 class="download-title">Livret stagiaire</h3>
+                    <p class="download-description">
+                        Guide d'observation pour repérer les situations de contournement en atelier
+                    </p>
+                    <a href="livret-stagiaire.pdf" class="btn-download" download>
+                        Télécharger le livret
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Centre de Formation CETIH</h3>
+                <p>
+                    Formation professionnelle en environnement industriel automatisé<br>
+                    SIRET : 30527396300036<br>
+                    N° déclaration d'activité : 52440857744
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <div>
+                        14 avenue de Syrma<br>
+                        ZI Belle Etoile<br>
+                        44470 CARQUEFOU
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div>02 40 92 44 21</div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <div><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="84e7ebeaf0e5e7f0e7e2e7c4e7e1f0edecaae1f1">[email&#160;protected]</a></div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Accessibilité & Inclusion</h3>
+                <p>
+                    Formation accessible aux personnes en situation de handicap.<br><br>
+                    <strong>Référent Handicap :</strong><br>
+                    Thierry Charpentier<br>
+                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="89eae6e7fde8eafdeaefeac9eaecfde0e1a7ecfc">[email&#160;protected]</a>
+                </p>
+                <p style="margin-top: 1rem;">
+                    <a href="https://www.cetih.eu/wp-content/uploads/2024/09/CATALOGUE_CENTRE_DE_FORMATION_CETIH.pdf" target="_blank" rel="noopener noreferrer">
+                        📋 Politique d'inclusion et de gestion du handicap
+                    </a>
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 Centre de Formation CETIH - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const content = item.querySelector('.accordion-content');
+            const isActive = header.classList.contains('active');
+            
+            // Fermer tous les autres accordéons
+            document.querySelectorAll('.accordion-header').forEach(h => {
+                h.classList.remove('active');
+                h.parentElement.querySelector('.accordion-content').classList.remove('active');
+            });
+            
+            // Toggle l'accordéon cliqué
+            if (!isActive) {
+                header.classList.add('active');
+                content.classList.add('active');
+            }
+        }
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.objectif-card, .accordion-item, .download-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Smooth scroll pour les ancres
+        document.querySelector
